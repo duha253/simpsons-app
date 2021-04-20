@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ('layout/head.ejs')%>>
+<body>
+    <header>
+        <%-include ('layout/nav.ejs')%>
+    </header>
+    <main>
+    <% quotesInfo.forEach( quotes=> {%>
+<section>
+ <p>
+    <%= quotes.quote%>
+ </p>
+ <p>
+    <%= quotes.character%>
+ </p>
+ <img src=" <%= quotes.image%>" alt="">
+ <p>
+    <%= quotes.characterDirection%>
+ </p>
+ <form action="/favoriteD-quotes/<%= quotes.id%>?method_Put" method="POST">
+    <input type="text" name="quotes" value="<%= quotes.quote%>">
+    <input type="text" name="character"  quotes=" <%= quotes.character%>">
+    <input type="text" name="image" value=" <%= quotes.image%>">
+    <input type="text" name="characterDirection" value="<%= quotes.characterDirection%>">
+    <input type="submit" value="update ">
+
+
+    <form action="/favoriteD-quotes/<%= quotes.id%>?method_Put" method="DELETE">
+        <input type="submit" value="DELETE ">
+    </form>
+</form>   
+
+
+
+
+
+</section>
+    
+
+
+
+
+
+
+
+    <%})%>
+    </main>
+
+</body>
+</html>

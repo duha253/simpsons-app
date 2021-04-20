@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ('layout/head.ejs')%>
+<body>
+    <header>
+        <%-include ('layout/nav.ejs')%>
+    </header>
+    <main>
+    <% quotes.forEach(quotes => {%>
+<section>
+ <p>
+    <%= quotes.quote%>
+ </p>
+ <p>
+    <%= quotes.character%>
+ </p>
+ <img src=" <%= quotes.image%>" alt="">
+ <p>
+    <%= quotes.characterDirection%>
+ </p>
+
+
+ <form action="" method="POST">
+     <input type="hidden" name="" value="<%= quotes.quote%>">
+     <input type="hidden" name="" value=" <%= quotes.character%>">
+     <input type="hidden" name="" value=" <%= quotes.image%>">
+     <input type="hidden" name="" value="<%= quotes.characterDirection%>">
+     <input type="submit" value="save value">
+
+ </form>   
+
+
+</section>
+    
+
+
+
+
+
+
+
+    <%})%>
+    </main>
+
+</body>
+</html>

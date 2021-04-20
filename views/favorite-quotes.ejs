@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ('layout/head.ejs')%>
+<body>
+    <header>
+        <%-include ('layout/nav.ejs')%>
+    </header>
+    <main>
+    <% favquet.forEach(quotes => {%>
+<section>
+ <p>
+    <%= quotes.quote%>
+ </p>
+ <p>
+    <%= quotes.character%>
+ </p>
+ <img src=" <%= quotes.image%>" alt="">
+ <p>
+    <%= quotes.characterDirection%>
+ </p>
+
+
+<a href="/favoriteD-quotes/<%= quotes.id%>"> view detalies</a>
+
+
+</section>
+    
+
+
+
+
+
+
+
+    <%})%>
+    </main>
+
+</body>
+</html>
